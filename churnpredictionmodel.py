@@ -28,7 +28,7 @@ X = df.drop('Churn', axis=1)
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y, test_size=0.2, random_state=42)
 
 # scaling the numerical features
-nemerical_cols = ['tenure', 'MonthlyCharges', 'TotalCharges', 'totalSevice']
+nemerical_cols = ['tenure', 'MonthlyCharges', 'TotalCharges']
 scaler = StandardScaler()
 X_train[nemerical_cols] = scaler.fit_transform(X_train[nemerical_cols])
 X_test[nemerical_cols] = scaler.fit_transform(X_test[nemerical_cols])
