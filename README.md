@@ -95,22 +95,22 @@ Our model identified several key indicators that point to a customer being at hi
 ---
 
 #### 🛡️ The Engineered No_Protection_Flag
-**Insight:** Our custom-built feature proved to be the second most powerful churn predictor. Customers who subscribe to internet service but lack essential add-ons like OnlineSecurity or TechSupport are at extremely high risk. This flags a cohort that is under-invested in the ecosystem and more likely to have a negative experience when issues arise.
+- **Insight:** Our custom-built feature proved to be the second most powerful churn predictor. Customers who subscribe to internet service but lack essential add-ons like OnlineSecurity or TechSupport are at extremely high risk. This flags a cohort that is under-invested in the ecosystem and more likely to have a negative experience when issues arise.
 
 ---
 
 #### 💳 The "Digitally Engaged but Uncommitted" Cohort (PaperlessBilling + Payment_Echeck)
-**Insight:** The model identified a high-risk persona: customers who are digitally engaged (PaperlessBilling) but pay manually each month via Payment_Echeck. This combination creates a recurring monthly decision point, forcing a conscious re-evaluation of the service's cost, while their digital fluency makes switching to a competitor frictionless.
+- **Insight:** The model identified a high-risk persona: customers who are digitally engaged (PaperlessBilling) but pay manually each month via Payment_Echeck. This combination creates a recurring monthly decision point, forcing a conscious re-evaluation of the service's cost, while their digital fluency makes switching to a competitor frictionless.
 
 ---
 
 #### 🎬 Interaction Effect: StreamingMovies as a Churn Accelerant for Fiber Optic Customers
-**Insight:** A deeper analysis revealed a powerful interaction effect. While StreamingMovies is a general churn indicator, its negative impact is almost exclusively concentrated within the Fiber Optic cohort (21.9% churn rate) and is negligible for DSL users (5.6% churn rate). This is due to an "expectation gap": Fiber customers have sky-high expectations for a premium experience, and when the in-house streaming service fails to meet the standard set by market leaders like Netflix, it creates a profound sense of poor value that contaminates their perception of the core, high-cost fiber service.
+- **Insight:** A deeper analysis revealed a powerful interaction effect. While StreamingMovies is a general churn indicator, its negative impact is almost exclusively concentrated within the Fiber Optic cohort (21.9% churn rate) and is negligible for DSL users (5.6% churn rate). This is due to an "expectation gap": Fiber customers have sky-high expectations for a premium experience, and when the in-house streaming service fails to meet the standard set by market leaders like Netflix, it creates a profound sense of poor value that contaminates their perception of the core, high-cost fiber service.
 
 ---
 
 #### 👴 Deep Dive: The SeniorCitizen Value Mismatch Cascade
-**Insight:** A root-cause analysis confirmed that high churn (30–47%) among senior citizens is driven by a severe product-value mismatch. The product catalog forces them to choose between high-cost internet tiers (DSL at ~$55, Fiber at ~$91) for what are often basic needs. Combined with over 50% of this cohort using manual Echeck payments, they are served a constant, conscious reminder that they are overpaying for underutilized services, inevitably leading them to seek simpler, more affordable alternatives.
+- **Insight:** A root-cause analysis confirmed that high churn (30–47%) among senior citizens is driven by a severe product-value mismatch. The product catalog forces them to choose between high-cost internet tiers (DSL at ~₹55, Fiber at ~₹91) for what are often basic needs. Combined with over 50% of this cohort using manual Echeck payments, they are served a constant, conscious reminder that they are overpaying for underutilized services, inevitably leading them to seek simpler, more affordable alternatives.
 
 ---
 
@@ -124,27 +124,27 @@ The model clearly identified three distinct personas of a loyal customer. These 
 ### 👨‍💼 Persona 1: The Committed Veteran
 This is the cornerstone of the loyal customer base, defined by their long-term commitment and history with the company.
 
-**Key Indicators:** Contract (long-term), tenure, and our engineered Tenure_Group feature.  
+- **Key Indicators:** Contract (long-term), tenure, and our engineered Tenure_Group feature.  
 
-**Insight:** Unsurprisingly, customers locked into 1 or 2-year contracts and those who have been with the company for a long time are the least likely to churn. Our engineered Tenure_Group feature confirmed that loyalty increases significantly once a customer moves beyond the high-risk "New Customer" phase into an "Established" or "Loyal" cohort. This highlights the critical business need to survive the first year and lock customers into longer terms.
+- **Insight:** Unsurprisingly, customers locked into 1 or 2-year contracts and those who have been with the company for a long time are the least likely to churn. Our engineered Tenure_Group feature confirmed that loyalty increases significantly once a customer moves beyond the high-risk "New Customer" phase into an "Established" or "Loyal" cohort. This highlights the critical business need to survive the first year and lock customers into longer terms.
 
 ---
 
 ### 🛡️ Persona 2: The Invested Protector
 This persona represents customers who are deeply integrated into the company's service ecosystem, using it for more than just a basic connection.
 
-**Key Indicators:** OnlineSecurity, OnlineBackup, Payment_Automatic.  
+- **Key Indicators:** OnlineSecurity, OnlineBackup, Payment_Automatic.  
 
-**Insight:** These "sticky" features create significant loyalty. Protective add-ons like OnlineSecurity and OnlineBackup increase the "switching costs," as a customer would need to find and trust a new provider for these critical services. Payment_Automatic creates a frictionless relationship by removing the monthly conscious decision to pay, transforming the service into a passive utility and reducing churn opportunities.
+- **Insight:** These "sticky" features create significant loyalty. Protective add-ons like OnlineSecurity and OnlineBackup increase the "switching costs," as a customer would need to find and trust a new provider for these critical services. Payment_Automatic creates a frictionless relationship by removing the monthly conscious decision to pay, transforming the service into a passive utility and reducing churn opportunities.
 
 ---
 
 ### 📞 Persona 3: The Traditionalist
 This persona is defined by their preference for simple, traditional services and interactions, making them naturally resistant to change.
 
-**Key Indicators:** Internetservice_No, Payment_Mcheck.  
+- **Key Indicators:** Internetservice_No, Payment_Mcheck.  
 
-**Insight:** The model identified two key proxies for a change-averse customer. Customers with simple, phone-only plans (Internetservice_No) are a highly stable base, insulated from the intense competition in the broadband market. Similarly, those who pay by mailed check (Payment_Mcheck) represent a less digitally-savvy cohort for whom the effort of switching providers is a significant retention barrier.
+- **Insight:** The model identified two key proxies for a change-averse customer. Customers with simple, phone-only plans (Internetservice_No) are a highly stable base, insulated from the intense competition in the broadband market. Similarly, those who pay by mailed check (Payment_Mcheck) represent a less digitally-savvy cohort for whom the effort of switching providers is a significant retention barrier.
 
 
 
