@@ -8,6 +8,17 @@ from sklearn.preprocessing import StandardScaler
 file_path = 'Telco-Customer-Churn.csv'
 df = pd.read_csv(file_path)
 
+# feature engineering
+
+# --- 1. Binning Tenure ---
+bins = [0, 12, 48, 72]
+labels = ['New_Customer', 'Established_Customer', 'Loyal_Customer']
+df['Tenure_Group'] = pd.cut(df['tenure'], bins=bins, labels=labels, right=False)
+df = pd.get_dummies(df, columns=['Tenure_Group'], drop_first=True)
+# --- 2. Create Risk Flag ---
+condition = (df['Internetservice_No'] == 0) & (df['OnlineSecurity'] == 0) & (df['TechSupport'] == 0)
+df['Risk_Flag'] = np.where(condition, 1, 0)
+
 # target variable
 Y = df['Churn']
 # features
@@ -29,7 +40,7 @@ X_test[nemerical_cols] = scaler.fit_transform(X_test[nemerical_cols])
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 
-model = LogisticRegression(random_state=42,class_weight='balanced',C=0.01,max_iter=300, solver='liblinear')
+model = LogisticRegression(random_state=42,class_weight={0:1,1:1.9},C=0.01,max_iter=100, solver='liblinear')
 model.fit(X_train, Y_train)
 Y_pred = model.predict_proba(X_test)[:,1] >= 0.52
 
