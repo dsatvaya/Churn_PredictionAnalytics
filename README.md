@@ -37,13 +37,32 @@ Architected new, high-signal features to enhance the model's predictive power. T
 - Established a **Baseline Logistic Regression** model to benchmark performance.  
 - Experimented with more complex models (**Random Forest**, **LightGBM**) and identified Logistic Regression as the most effective for this dataset.
 
+
+
+
 ### ⚙️ Model Optimization & Tuning
 - Addressed the class imbalance inherent in the dataset using **class_weight** to optimize for the primary business goal of identifying at-risk customers (Recall).  
 - Performed an exhaustive **Hyperparameter Tuning** process using **GridSearchCV** to find the optimal model settings.
 
+```Python
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+
+model = LogisticRegression(random_state=42,class_weight={0:1,1:1.9},C=0.01,max_iter=100, solver='liblinear')
+model.fit(X_train, Y_train)
+Y_pred = model.predict_proba(X_test)[:,1] >= 0.52
+```
+
 ### 💡 Interpretation & Strategy Formulation
 - Leveraged the final model's coefficients to extract key business insights and develop prescriptive analytics.
 
+
+```python
+feature_importance = pd.DataFrame({'Feature': X.columns, 'Importance': model.coef_[0]})
+feature_importance = feature_importance.sort_values(by='Importance', ascending=False)
+print('\nFeature Importance:')
+print(feature_importance)
+```
 
 ## 📊 Final Model Performance
 
